@@ -151,13 +151,6 @@ def r1egister(request):
 
 
 
-
-
-
-
-
-
-
 def register(request):
 
     form = UserForm(request.POST or None)
@@ -196,3 +189,68 @@ def register(request):
         "form": form,
     }
     return render(request, 'register.html', context)
+
+###Trivias
+
+def details(request, id, ttlscore):
+
+    if int(id)<31:
+        triv = questions.objects.get(id=id)
+        #answer = answers.objects.get(id=id)
+        newid=int(id)+1
+        #ttlscore=totalscore
+        #strid=str(newid)
+        #newscore=int(tscore)
+
+        context={
+        'triv':triv,
+        'id': newid,
+        'ttlscore':ttlscore
+        #,
+        #'tscore':newscore
+        #,
+        #'answ':answer
+        }
+        return render(request, 'details.html', context)
+    else:
+        context={
+        'ttlscore':ttlscore
+        #,
+        #'tscore':newscore
+        #,
+        #'answ':answer
+        }
+        return render(request, 'scorescreen.html', context)
+
+#def processing(request, option, id):
+def processing(request, option, id, ttlscore):
+    newid=int(id)+1
+    triv = questions.objects.get(id=id)
+    #answer = answers.objects.get(id=id)
+    playeranswer=option
+    objanswer = answers.objects.get(id=id)
+    preanswer = objanswer.answer.replace(" ", "")
+    correctanswer = preanswer.replace(",", "")
+    #correctanswer.replace(" ", "")
+    questionscore = objanswer.score
+
+    if correctanswer == playeranswer:
+        context={
+        'triv': triv,
+        'message':'Respuesta Correcta',
+        'qscore':questionscore,
+        'ttlscore': int(ttlscore)+int(questionscore),
+        'id':newid#,
+        #'ttlscore':ttlscore
+        }
+        return render(request, 'outcome.html', context)
+    else:
+        context2={
+        'triv': triv,
+        'message':'Respuesta Incorrecta',
+        'qscore':0,
+        'ttlscore': ttlscore,
+        'id':newid#,
+        #'ttlscore':ttlscore
+        }
+        return render(request, 'outcome.html', context2)

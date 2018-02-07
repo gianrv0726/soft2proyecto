@@ -1,0 +1,8 @@
+{% extends 'login/layout.html' %}
+{% block content %}
+<h3 class="center-align blue">Juego Trivia</h3>
+
+<strong>{{ user.username }}, estas listo para empezar?</strong>
+<a href="/login/details/1-0" class="btn center-align" style="display:block">Iniciar Juego</a>
+<!--<a href="/trivia/details/1-0" class="btn center-align" style="display:block">Iniciar Juego</a>-->
+{% endblock %}

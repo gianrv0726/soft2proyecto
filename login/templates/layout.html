@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+  content="ie=edge">
+  {% load staticfiles %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!--correctousareste<script type="text/javascript" src="{% static 'trivia/script.js' %}"></script>-->
+  <!----><link rel="stylesheet" type="text/css" href="{% static 'login/a.css' %}" />
+  <!--<script src="{% static "trivia/script.js" %}"></script>-->
+  <title>MundialRusiaApp</title>
+</head>
+<body>
+  <header class="container center-align">
+    <div class="py-5 text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+    <h1>Mundial Rusia App </h1>
+  </div>
+  </div>
+  </div>
+  </div>
+  </header>
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+    <br>
+  <!--  <a style="display:block" class="center-align" href="/admin">Admin Login</a> -->
+</body>
+</html>

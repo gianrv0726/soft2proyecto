@@ -2,12 +2,12 @@
 <html lang="en-us"><head>
 <title>Site administration | Django site admin</title>
 
-<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<!-- <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css"> -->
 <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css">
 
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <!-- <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css"> -->
+     <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
 
     <title>..::Pagina Principal::..</title>
     <meta charset="utf-8"/>
@@ -61,7 +61,7 @@
 
 
     <!-- Header -->
-    <div id="header">
+  <!--  <div id="header">
         <div id="branding">
 
 <h2 id="site-name">Rusia 2018 App</h2>
@@ -83,7 +83,7 @@
 
 
 
-    </div>
+    </div> -->
     <!-- END Header -->
 
 
@@ -109,7 +109,7 @@
 
             <tbody><tr class="model-group">
 
-                <th scope="row"><a href="/login/index0"  style="display:block">Iniciar Juego</a></th>
+                <th scope="row"><a href="{% url 'login:triviaa' %}">Trivia</a></th>
 
 
 

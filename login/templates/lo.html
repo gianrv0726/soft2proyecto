@@ -1,0 +1,150 @@
+
+
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet"  type="text/css" href="{% static 'login/theme.css' %}"/>
+
+    <script>
+   var timeLimit = 3; //tiempo en minutos
+   var conteo = new Date(timeLimit * 60000);
+
+   function inicializar(){
+      document.getElementById('cuenta').childNodes[0].nodeValue =
+                  conteo.getMinutes() + ":" + conteo.getSeconds();
+   }
+
+   function cuenta(){
+      intervaloRegresivo = setInterval("regresiva()", 1000);
+   }
+
+   function regresiva(){
+      if(conteo.getTime() > 0){
+         conteo.setTime(conteo.getTime() - 1000);
+      }else{
+         clearInterval(intervaloRegresivo);
+         location.replace("http://127.0.0.1:8000/list/");
+      }
+
+      document.getElementById('cuenta').childNodes[0].nodeValue =
+                  conteo.getMinutes() + ":" + conteo.getSeconds();
+   }
+
+   onload = inicializar;
+   onload = cuenta;
+</script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <i class="fa d-inline fa-lg fa-envelope-o"></i> Invitaciones <span class="badge badge-secondary ml-1">New!</span></button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Invitacion de Usuario 1 </a>
+              <a class="btn btn-primary pi-draggable" href="#" draggable="true" id="c_button">Aceptar </a>
+              <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Rechazar </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Invitacion de Usuario 2 </a>
+              <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Aceptar </a>
+              <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Rechazar </a>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <i class="fa d-inline fa-lg fa-user-circle-o"></i> Usuario </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Dinero : S/. 500.00</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"></a>
+              <a class="btn btn-outline-primary pi-draggable text-center" href="{% url 'login:logout_user' %}"  draggable="true" id="c_button-outline">Salir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  <div class="py-5 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-1 text-white">Juego Trivia:</h1>
+          <h5 class="display-4 text-white"><em>Tiempo Restante:</em></h5>
+          <h5 class="display-4 text-white"><em><div id="cuenta">0:00</div></em></h5><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form>
+   {% block content %}
+  <div class="row">
+    <div class="col-md-12 bg-light">
+      <div class="col-md-12 text-white">
+        <table class="table text-dark">
+          {% for trivias in object_list %}
+          <thead>
+            <td>
+            <tr>
+              <th class="text-dark">PREGUNTA {{ forloop.counter }} DE 10</th></td>
+
+
+            </tr>
+
+            <tr> <th class="text-dark">{{ trivias.trivia }}</th> </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+
+
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <h3><input type="radio" name="{{ trivias.id }}" value="opcion1" checked>{{ trivias.opcion1 }}</h3> <td>
+              <td>
+                <h3><input type="radio" name="{{ trivias.id }}" value="opcion2" checked>{{ trivias.opcion2 }}</h3> <td>
+              <td></td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>
+                <h3><input type="radio" name="{{ trivias.id }}" value="opcion3" checked>{{ trivias.opcion3 }}</h3> <td>
+              <td>
+                <h3><input type="radio" name="{{ trivias.id }}" value="opcion4" checked>{{ trivias.opcion4 }}</h3> <td>
+              <td></td>
+            </tr>
+
+          </tbody>
+          {% endfor %}
+
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
+  <table>
+  <tr>
+    <td></td>
+    <td></td>
+    <div align="center">
+      <input type='submit' class="btn btn-primary pi-draggable" value='Terminar' />
+      <!-- <a id="c_button" class="btn btn-primary pi-draggable" href="#">Terminar</a>  -->
+    </div>
+  </tr>
+</table>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+  </html>

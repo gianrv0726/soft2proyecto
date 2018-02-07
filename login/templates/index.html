@@ -6,7 +6,8 @@
 <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css">
 
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css"> -->
 
     <title>..::Pagina Principal::..</title>
     <meta charset="utf-8"/>
@@ -16,14 +17,44 @@
 
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'login/nuevo.css' %}" />
   -->
-    <link rel="stylesheet" type="text/css" href="{% static 'login/estilo01.css' %}" />
+  <!--  <link rel="stylesheet" type="text/css" href="{% static 'login/estilo01.css' %}" /> -->
   <!--    <link rel="stylesheet" type="text/css" href="{% static 'login/estiloBuscar.css' %}" /> -->
-  <link rel="stylesheet" type="text/css" href="{% static 'login/Bootstrap.min.css' %}" />
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'login/Bootstrap.min.css' %}" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet"  type="text/css" href="{% static 'login/theme.css' %}"/>
 <meta name="robots" content="NONE,NOARCHIVE">
 </head>
 
 
 <body class=" dashboard" data-admin-utc-offset="0">
+  <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+        <div class="btn-group">
+          <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <i class="fa d-inline fa-lg fa-envelope-o"></i> Invitaciones <span class="badge badge-secondary ml-1">New!</span></button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Invitacion de Usuario 1 </a>
+            <a class="btn btn-primary pi-draggable" href="#" draggable="true" id="c_button">Aceptar </a>
+            <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Rechazar </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Invitacion de Usuario 2 </a>
+            <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Aceptar </a>
+            <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Rechazar </a>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <i class="fa d-inline fa-lg fa-user-circle-o"></i> {{ user.username }} </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Dinero : S/. 500.00</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#"></a>
+            <a class="btn btn-outline-primary pi-draggable text-center" href="{% url 'login:logout_user' %}"  draggable="true" id="c_button-outline">Salir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 <!-- Container -->
 <div id="container">
@@ -42,7 +73,7 @@
 
                 Bienvenido,
                 <strong>{{ user.username }}</strong>
-              
+
 
 
 
@@ -78,7 +109,7 @@
 
             <tbody><tr class="model-group">
 
-                <th scope="row"><a href=""> </a></th>
+                <th scope="row"><a href="/login/index0"  style="display:block">Iniciar Juego</a></th>
 
 
 
@@ -101,8 +132,8 @@
 
 <div id="content-related">
     <div class="module" id="recent-actions-module">
-          <h2>Recent actions</h2>
-          <h3>My actions</h3>
+          <h2>Grupos</h2>
+        <!--  <h3>My actions</h3> -->
 
 
 
@@ -114,7 +145,7 @@
 
                   <br>
 
-                      <span class="mini quiet">Post</span>
+                      <span class="mini quiet">Activos</span>
 
               </li>
 

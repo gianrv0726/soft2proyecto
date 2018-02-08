@@ -1,4 +1,4 @@
-{% extends 'login/layout.html' %}
+{% extends 'layout.html' %}
 {% block content %}
 
 <h3 class="center-align blue">{{triv.question}}</h3>
@@ -26,7 +26,7 @@
   </div>
 -->
 </div>
-<a href="/login/triviaa" class="btn">Atras</a>
+<a href="{% url 'login:returnn' %}" class="btn">Atras</a>
 <a href="/login/details/{{id}}-{{ttlscore}}/" class="btn">Siguiente Pregunta</a>
 <!--<a href="/trivia/details/{{id}}-{{score}}/" class="btn">Siguiente Pregunta</a>-->
 {% endblock %}

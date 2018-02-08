@@ -1,9 +1,10 @@
 {% extends 'layout.html' %}
 {% block content %}
 <h3 class="center-align blue">Juego Trivia</h3>
-
-<strong>{{ user.username }}, estas listo para empezar?</strong>
-
+<div class="">
+<h4>{{ user.username }}, estas listo para empezar?</h4>
+<p> Este juego consta de 10 preguntas, y su puntaje varia entre 1 y 5 puntos, segun el nivel de dificultad.</p>
+</div>
 <a href="/details/1-0" class="btn center-align" style="display:block">Iniciar Juego</a>
 <a href="/returnn/" class="btn center-align" style="display:block">Regresar</a>
 <!--<a href="/trivia/details/1-0" class="btn center-align" style="display:block">Iniciar Juego</a>-->

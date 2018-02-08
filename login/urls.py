@@ -18,7 +18,7 @@ from django.conf.urls import url
 
 
 
-app_name = 'login'
+#app_name = 'login'
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -32,4 +32,4 @@ urlpatterns = [
 #Prueba mostrar datos
     url(r'^list/$', views.PersonaList.as_view(), name='plist'),
 
-]
+];

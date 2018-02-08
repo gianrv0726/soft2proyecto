@@ -284,4 +284,4 @@ def returnn(request):
             #    Q(song_title__icontains=query)
             #).distinct()
     else:
-            return render(request, 'triviaa.html')
+            return render(request, 'index.html')

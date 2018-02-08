@@ -20,7 +20,6 @@
   <!--  <link rel="stylesheet" type="text/css" href="{% static 'login/estilo01.css' %}" /> -->
   <!--    <link rel="stylesheet" type="text/css" href="{% static 'login/estiloBuscar.css' %}" /> -->
   <!-- <link rel="stylesheet" type="text/css" href="{% static 'login/Bootstrap.min.css' %}" /> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 <!--  <link rel="stylesheet"  type="text/css" href="{% static 'login/theme.css' %}"/> -->
 <meta name="robots" content="NONE,NOARCHIVE">
 </head>
@@ -44,12 +43,12 @@
         <div id="user-tools">
 
                 Hola,
-                <strong>{{ user.username }}</strong><br>
+                <strong>{{ user.username }}</strong>
 
 
 
 
-                <a href="{% url 'login:logout_user' %}">Salir</a></br>
+                <a href="{% url 'login:logout_user' %}">Salir</a>
 
         </div>
 

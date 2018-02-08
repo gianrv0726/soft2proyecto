@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView
 #from . models import Post
 from django.urls import reverse_lazy
 # Create your views here.0
-from .models import Tlogin, Trivias
+from .models import Tlogin, Trivias, questions, answers
 
 
 from django.contrib.auth import authenticate, login

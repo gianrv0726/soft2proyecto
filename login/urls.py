@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^register/$', views.register, name='register'),
     url(r'^login_user/$', views.login_user, name='login_user'),
     url(r'^logout_user/$', views.logout_user, name='logout_user'),
-    url(r'^details/(?P<id>\d+)-(?P<ttlscore>\d+)/$', views.details.as_view(), name='details'),
+    url(r'^details/(?P<id>\d+)-(?P<ttlscore>\d+)/$', views.details, name='details'),
     url(r'^processing/(?P<option>[-\w]+)-(?P<id>\d+)-(?P<ttlscore>\d+)/$', views.processing, name='processing'),
 #Prueba mostrar datos
     url(r'^list/$', views.PersonaList.as_view(), name='plist'),

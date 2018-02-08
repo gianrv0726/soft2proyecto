@@ -34,7 +34,7 @@
           <p><strong>{{ error_message }}</strong></p>
       {% endif %}
 
-      <form class="form-horizontal" role="form" action="{% url 'login:login_user'%}" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" role="form" action="/login/login_user" method="post" enctype="multipart/form-data">
 {% csrf_token %}
     <div style="display: block;">
 

@@ -193,8 +193,8 @@ def register(request):
 ###Trivias
 
 def details(request, id, ttlscore):
-
-    if int(id)<31:
+#por ahora <11, luego hacer esto con random
+    if int(id)<11:
         triv = questions.objects.get(id=id)
         #answer = answers.objects.get(id=id)
         newid=int(id)+1

@@ -17,7 +17,7 @@
 
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'login/nuevo.css' %}" />
   -->
-    <link rel="stylesheet" type="text/css" href="{% static 'login/estilo01.css' %}" /> 
+    <link rel="stylesheet" type="text/css" href="{% static 'login/estilo01.css' %}" />
   <!--    <link rel="stylesheet" type="text/css" href="{% static 'login/estiloBuscar.css' %}" /> -->
    <link rel="stylesheet" type="text/css" href="{% static 'login/Bootstrap.min.css' %}" />
   <!-- <link rel="stylesheet"  type="text/css" href="{% static 'login/theme.css' %}"/> -->
@@ -42,14 +42,14 @@
 
         <div id="user-tools">
 
-                Hola,
+            <!--    Hola,
                 <strong>{{ user.username }}</strong>
+-->
 
 
 
 
-
-            <a href="/logout_user">Salir</a>
+            <a href="/logout_user">Logout | Salir</a>
 
 
         </div>
@@ -68,7 +68,7 @@
     <!-- Content -->
     <div id="content" class="colMS">
 
-        <h1>Pagina Principal</h1>
+        <h1>Bienvenido, {{ user.username }}</h1>
 
 <div id="content-main">
 
@@ -82,7 +82,7 @@
 
             <tbody><tr class="model-group">
 
-                <th scope="row"><a href="/trivia">Trivia</a></th>
+                <th scope="row"><h2><a href="/trivia">Trivia</a></h2></th>
 
 
 

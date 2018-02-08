@@ -256,7 +256,7 @@ def processing(request, option, id, ttlscore):
         return render(request, 'outcome.html', context2)
 
 
-def triviaa(request):
+def trivia(request):
     if not request.user.is_authenticated:
         return render(request, 'login.html')
     #else:

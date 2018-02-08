@@ -270,3 +270,18 @@ def triviaa(request):
             #).distinct()
     else:
             return render(request, 'triviaa.html')
+
+def returnn(request):
+    if not request.user.is_authenticated:
+        return render(request, 'login.html')
+    #else:
+
+
+        #query = request.GET.get("q")
+        #if query:
+
+          # song_results = song_results.filter(
+            #    Q(song_title__icontains=query)
+            #).distinct()
+    else:
+            return render(request, 'triviaa.html')

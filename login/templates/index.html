@@ -27,34 +27,6 @@
 
 
 <body class=" dashboard" data-admin-utc-offset="0">
-  <nav class="navbar navbar-expand-md bg-primary navbar-dark">
-    <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-        <div class="btn-group">
-          <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <i class="fa d-inline fa-lg fa-envelope-o"></i> Invitaciones <span class="badge badge-secondary ml-1">New!</span></button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Invitacion de Usuario 1 </a>
-            <a class="btn btn-primary pi-draggable" href="#" draggable="true" id="c_button">Aceptar </a>
-            <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Rechazar </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Invitacion de Usuario 2 </a>
-            <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Aceptar </a>
-            <a id="c_button" class="btn btn-primary pi-draggable" href="#" draggable="true">Rechazar </a>
-          </div>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <i class="fa d-inline fa-lg fa-user-circle-o"></i> {{ user.username }} </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Dinero : S/. 500.00</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"></a>
-            <a class="btn btn-outline-primary pi-draggable text-center" href="{% url 'login:logout_user' %}"  draggable="true" id="c_button-outline">Salir</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
 
 <!-- Container -->
 <div id="container">
@@ -71,13 +43,13 @@
 
         <div id="user-tools">
 
-                Bienvenido,
-                <strong>{{ user.username }}</strong>
+                Hola,
+                <strong>{{ user.username }}</strong><br>
 
 
 
 
-                <a href="{% url 'login:logout_user' %}">Log out</a>
+                <a href="{% url 'login:logout_user' %}">Salir</a></br>
 
         </div>
 
